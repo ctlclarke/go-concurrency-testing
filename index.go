@@ -31,6 +31,6 @@ func getGoogle(c chan int, x int) {
 	if err != nil {
 		log.Fatal("Do: ", err)
 	}
-	// defer resp.Body.Close()
+	defer resp.Body.Close()
 	c <- resp.StatusCode + x
 }
